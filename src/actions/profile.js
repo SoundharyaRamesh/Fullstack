@@ -4,7 +4,7 @@ import { PROFILES_LOADED, PROFILES_ERROR, HISTORY_LOADED, HISTORY_ERROR, TRANSFE
 export const loadProfile = () => async dispatch => {
     try {
         const res = await axios.get('https://moneytransfer-backend-aqvz.onrender.com/api/allUsers')
-        console.log(res);
+        //console.log(res);
         dispatch({
             type: PROFILES_LOADED,
             payload: res.data
