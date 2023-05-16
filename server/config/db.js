@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 require("dotenv").config();
-const URI = `mongodb+srv://soundharyaramesh24:Mnbvcxz!@123@cluster0.rctw7qe.mongodb.net/?retryWrites=true&w=majority`;
+const URI = "mongodb+srv://soundharyaramesh24:Mnbvcxz123@cluster0.rctw7qe.mongodb.net/Moneytransfer?retryWrites=true&w=majority";
 
 const connectDB = async () => {
   try {
