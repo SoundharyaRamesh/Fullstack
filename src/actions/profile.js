@@ -3,7 +3,7 @@ import { PROFILES_LOADED, PROFILES_ERROR, HISTORY_LOADED, HISTORY_ERROR, TRANSFE
 
 export const loadProfile = () => async dispatch => {
     try {
-        const res = await axios.get('/api/allUsers')
+        const res = await axios.get('https://moneytransfer-backend-aqvz.onrender.com/api/allUsers')
         console.log(res);
         dispatch({
             type: PROFILES_LOADED,
@@ -19,7 +19,7 @@ export const loadProfile = () => async dispatch => {
 
 export const loadHistory = () => async dispatch => {
     try {
-        const res = await axios.get('/api/history')
+        const res = await axios.get('https://moneytransfer-backend-aqvz.onrender.com/api/history')
         dispatch({
             type: HISTORY_LOADED,
             payload: res.data
@@ -40,7 +40,7 @@ export const transfer = ({ From, To, amount }, history) => async dispatch => {
     }
     const body = JSON.stringify({ From, To, amount })
     try {
-        const res = await axios.post('/api/transaction', body, config)
+        const res = await axios.post('https://moneytransfer-backend-aqvz.onrender.com/api/transaction', body, config)
         dispatch({
             type: TRANSFER_SUCCESS,
             payload: res.data
