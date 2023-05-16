@@ -1,8 +1,10 @@
 const connectDB = require("./server/config/db");
 const path = require("path");
+const cors = require("cors");
 const express = require("express");
 
 const app = express();
+app.use(cors());
 app.use(express.json({ extended: false }));
 connectDB();
 
@@ -16,8 +18,8 @@ app.use((req, res, next) => {
 
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Methods", "GET,PUT,POST,DELETE");
-  res.header("Access-Control-Allow-Headers", "Content-Type");
+  res.header("Access-Control-Allow-Methods", "GET,POST,PUT,PATCH,DELETE");
+  res.header("Access-Control-Allow-Headers", "Content-Type","Authorization");
   next();
 });
 
