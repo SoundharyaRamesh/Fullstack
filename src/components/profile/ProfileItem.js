@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 const ProfileItem = (props) => {
   const strchk = props.acc_no.replace(/.(?=.{4,}$)/g, 'X');
-  console.log(strchk);
+//   console.log(strchk);
   return (
     <div className="box">
       <div className="glass"></div>
